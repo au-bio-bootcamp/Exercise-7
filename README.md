@@ -1,11 +1,11 @@
-#Small Group Exercise #9:
-##Variant calling from transcriptomic data
+# Small Group Exercise #9:
+## Variant calling from transcriptomic data
 
 1.	Explore the documentation for the BCFtools [here](https://hpcdocs.asc.edu/content/bcftools). Follow the instructions to load the bcftools module into your session on the ASC. Note, if you logout and back on again, you will need to re-load the module. If you want to know which modules are currently loaded, run `module list`.
 
 2.	Create a new directory for this exercise called `L_luymesi_trans_variation` and copy the three (3) files from the `Lamellibrachia_luymesi_transcriptome_variant_calling` folder in the `/home/shared/biobootcamp/data` directory to your new directory using `cp` and a wildcard (i.e., `*`). Now, move into your `L_luymesi_trans_variation` directory to continue with the exercise.
 
- a.	Assess the contig assembly in `Lamellibrachia_luymesi_sub1M_NON_NORM_TRI_05_2015.fasta` using `get_fasta_stats.pl` and the `-T` option (what does this option do to the output?). Record the summary statistics in the table below.
+   a.	Assess the contig assembly in `Lamellibrachia_luymesi_sub1M_NON_NORM_TRI_05_2015.fasta` using `get_fasta_stats.pl` and the `-T` option (what does this option do to the output?). Record the summary statistics in the table below.
   
   Contig statistics:  | Value (before filtering): | After filtering
  ------------- | ------------- | -------------
@@ -17,9 +17,9 @@
  Average GC% | |
  Non-ACGT bases | |
   
-  b.	The exercise will focus on contigs **>2,000** bp in size, so those need to be isolated. Run `select_contigs.pl -help` and read over the information under USAGE: (near the top) to 1) identify the required option flag and 2) structure the command. When ready, execute the command and save the size filtered contigs to a file called `Lamellibrachia_luymesi_2000bp_plus.fasta`
+    b.	The exercise will focus on contigs **>2,000** bp in size, so those need to be isolated. Run `select_contigs.pl -help` and read over the information under USAGE: (near the top) to 1) identify the required option flag and 2) structure the command. When ready, execute the command and save the size filtered contigs to a file called `Lamellibrachia_luymesi_2000bp_plus.fasta`
 
- c.	Assess the contigs in `Lamellibrachia_luymesi_2000bp_plus.fasta` using the `get_fasta_stats.pl -T`. Note whether (and how) the summary statistics differ from (2a) above by adding them to the table in the column **After filtering**.
+   c.	Assess the contigs in `Lamellibrachia_luymesi_2000bp_plus.fasta` using the `get_fasta_stats.pl -T`. Note whether (and how) the summary statistics differ from (2a) above by adding them to the table in the column **After filtering**.
 
 3.	Next, use the `module load` command to make bowtie2, samtools, and picard available interactively in your workspace.
 
@@ -57,7 +57,7 @@
 
  a.	For this step, we will submit the job to the ASC queue. As done in previous exercises, copy `/home/shared/biobootcamp/data/example_ASC_queue_scripts/GATK_example.sh` to your current directory. Submit it to the ASC queue system using the directions at the bottom of the script. 
 
- b.	While this job runs, explore and read more about the options of GATK in the `ascdocs` under `16.  sequence_analysis`.
+ b.	While this job runs, explore and read more about the options of GATK [here](https://hpcdocs.asc.edu/content/gatk-0).
  
  c.	At this point, we will work directly with the VCF file in various ways. `less –S Lamellibrachia_luymesi_transcriptomic_variants.vcf` and look it over. Note how information in the file is structured, which should be familiar from our lecture on variant calling and the VCF standard format.
 
@@ -103,8 +103,8 @@
 
 16.	You can instantly navigate to a particular variant by adding an additional option: `samtools tview -p Lamellibrachia_luymesi_sub1M_NON_NORM_TRI_05_2015_c3462_g1_i1:930 Lamellibrachia_luymesi_transcriptomic_variants.bam.sorted.bam Lamellibrachia_luymesi_2000bp_plus.fasta`, where `-p` is CHROM:POS (which is CHROMosome:POSition separated by a colon). To identify additional SNPs you might want to look at: `grep -v "##" Lamellibrachia_luymesi_transcriptomic_variants_FILTERED.vcf | awk 'OFS="\t"{print $1,$2,$4,$5}'` and replacing the CHROM:POS in the above with specific output from the first and second fields from this command.
 
-####This short exercise should serve as an example of how the tools you are learning can be used to parse and filter data and how the presence or absence of flags can change the behavior of a program. Lastly and as you have seen, variant filtering can be difficult: not being stringent enough can lead to false positives while filtering at too high stringency could exclude real variants. The best practice is to experiment with options and filtering levels and erring on the side of caution. 
+#### This short exercise should serve as an example of how the tools you are learning can be used to parse and filter data and how the presence or absence of flags can change the behavior of a program. Lastly and as you have seen, variant filtering can be difficult: not being stringent enough can lead to false positives while filtering at too high stringency could exclude real variants. The best practice is to experiment with options and filtering levels and erring on the side of caution. 
 
-####Some studies incorporate empirical validation, but this can be costly given the number of variants. For example if you identify 100,000 SNPs (a modest size), and you want to validate 1%, that requires you to validate 1000 SNPs, which can be costly and time intensive (especially using traditional methods such as Sanger sequencing).
+#### Some studies incorporate empirical validation, but this can be costly given the number of variants. For example if you identify 100,000 SNPs (a modest size), and you want to validate 1%, that requires you to validate 1000 SNPs, which can be costly and time intensive (especially using traditional methods such as Sanger sequencing).
 
-####More recently, researchers validate SNP calls by using different variant calling  softwares or different types of genomic data (e.g. high coverage exome data), where a larger fraction of the genome can be validated. These approaches allow you to better estimate the true and false positive rate in your dataset and make adjustments to your filtering accordingly.
+#### More recently, researchers validate SNP calls by using different variant calling  softwares or different types of genomic data (e.g. high coverage exome data), where a larger fraction of the genome can be validated. These approaches allow you to better estimate the true and false positive rate in your dataset and make adjustments to your filtering accordingly.
