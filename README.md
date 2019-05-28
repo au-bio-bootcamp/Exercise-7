@@ -1,4 +1,4 @@
-# Small Group Exercise #9:
+# Small Group Exercise #7:
 ## Variant calling from transcriptomic data
 
 1.	Explore the documentation for the BCFtools [here](https://hpcdocs.asc.edu/content/bcftools). Follow the instructions to load the bcftools module into your session on the ASC. Note, if you logout and back on again, you will need to re-load the module. If you want to know which modules are currently loaded, run `module list`.
