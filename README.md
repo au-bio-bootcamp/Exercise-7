@@ -69,7 +69,7 @@
 
     a.	For this step, we will submit the job to the ASC queue. As done in previous exercises, copy `/home/shared/biobootcamp/data/example_ASC_queue_scripts/GATK_example.sh` to your current directory. Submit it to the ASC queue system using the directions at the bottom of the script. 
 
-     b.	While this job runs, explore and read more about the options of GATK [here](https://hpcdocs.asc.edu/content/gatk-0).
+     b.	While this job runs, explore and read more about the options of GATK [here](https://hpcdocs.asc.edu/content/gatk-0). Note, we are using the older versin of GATK, not the latest one, which has many more dependencies.
  
      c.	At this point, we will work directly with the VCF file in various ways. `less –S Lamellibrachia_luymesi_transcriptomic_variants.vcf` and look it over. Note how information in the file is structured, which should be familiar from our lecture on variant calling and the VCF standard format.
 
