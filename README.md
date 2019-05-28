@@ -5,7 +5,7 @@
 
 2.	Create a new directory for this exercise called `L_luymesi_trans_variation` and copy the three (3) files from the `Lamellibrachia_luymesi_transcriptome_variant_calling` folder in the `/home/shared/biobootcamp/data` directory to your new directory using `cp` and a wildcard (i.e., `*`). Now, move into your `L_luymesi_trans_variation` directory to continue with the exercise.
 
-   1.1.	Assess the contig assembly in `Lamellibrachia_luymesi_sub1M_NON_NORM_TRI_05_2015.fasta` using `get_fasta_stats.pl` and the `-T` option (what does this option do to the output?). Record the summary statistics in the table below.
+  a.	Assess the contig assembly in `Lamellibrachia_luymesi_sub1M_NON_NORM_TRI_05_2015.fasta` using `get_fasta_stats.pl` and the `-T` option (what does this option do to the output?). Record the summary statistics in the table below.
   
   Contig statistics:  | Value (before filtering): | After filtering
  ------------- | ------------- | -------------
@@ -17,15 +17,15 @@
  Average GC% | |
  Non-ACGT bases | |
   
-   1.2.	The exercise will focus on contigs **>2,000** bp in size, so those need to be isolated. Run `select_contigs.pl -help` and read over the information under USAGE: (near the top) to 1) identify the required option flag and 2) structure the command. When ready, execute the command and save the size filtered contigs to a file called `Lamellibrachia_luymesi_2000bp_plus.fasta`
+  b.	The exercise will focus on contigs **>2,000** bp in size, so those need to be isolated. Run `select_contigs.pl -help` and read over the information under USAGE: (near the top) to 1) identify the required option flag and 2) structure the command. When ready, execute the command and save the size filtered contigs to a file called `Lamellibrachia_luymesi_2000bp_plus.fasta`
 
-   1.3.	Assess the contigs in `Lamellibrachia_luymesi_2000bp_plus.fasta` using the `get_fasta_stats.pl -T`. Note whether (and how) the summary statistics differ from (2a) above by adding them to the table in the column **After filtering**.
+  c.	Assess the contigs in `Lamellibrachia_luymesi_2000bp_plus.fasta` using the `get_fasta_stats.pl -T`. Note whether (and how) the summary statistics differ from (2a) above by adding them to the table in the column **After filtering**.
 
 3.	Next, use the `module load` command to make bowtie2, samtools, and picard available interactively in your workspace.
 
 4.	Now, we will make two index files for our reference fasta file. For this step, we will use picard and samtools. 
 
-   2.1. **Dictionary index file (picard)**: Note the java file we need and how we specify it’s location on the asc. You can read more about this sequence analysis package in [here](https://hpcdocs.asc.edu/content/picard).
+  a. **Dictionary index file (picard)**: Note the java file we need and how we specify it’s location on the asc. You can read more about this sequence analysis package in [here](https://hpcdocs.asc.edu/content/picard).
 
  `java -Xms2g -Xmx4g -jar /opt/asn/apps/picard_1.79/picard-tools-1.79/CreateSequenceDictionary.jar REFERENCE=Lamellibrachia_luymesi_2000bp_plus.fasta OUTPUT=Lamellibrachia_luymesi_2000bp_plus.dict`
  
