@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 #load modules needed for this job
 source /opt/asn/etc/asn-bash-profiles-special/modules.sh
