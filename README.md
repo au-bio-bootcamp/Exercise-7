@@ -43,8 +43,8 @@ bowtie2 \
   --sensitive-local \
   -x Lamellibrachia_luymesi_transcriptomic_variants_index  \
   -1 Lamellibrachia_luymesi_transcriptomic_sub1M_L001_R1_001.fastq \
-  -2 Lamellibrachia_luymesi_transcriptomic_sub1M_L001_R2_001.fastq | \
-  samtools view -bS - > Lamellibrachia_luymesi_transcriptomic_variants.bam
+  -2 Lamellibrachia_luymesi_transcriptomic_sub1M_L001_R2_001.fastq | samtools \
+  view -bS - > Lamellibrachia_luymesi_transcriptomic_variants.bam
 ```
 
 This will take a bit of time to run, so review the command to understand all the options used and take a minute to review what you've done so far.
