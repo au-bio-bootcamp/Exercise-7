@@ -1,7 +1,7 @@
 # Small Group Exercise #7:
 ## Variant calling from transcriptomic data
 
-1.	Explore the documentation for the BCFtools [here](https://hpcdocs.asc.edu/content/bcftools). Follow the instructions to load the bcftools module into your session on the ASC. Note, if you logout and back on again, you will need to re-load the module. If you want to know which modules are currently loaded, run `module list`.
+1.	Explore the documentation for the BCFtools at https://hpcdocs.asc.edu/content/bcftools. Follow the instructions to load the bcftools module into your session on the ASC. Note, if you logout and back on again, you will need to re-load the module. If you want to know which modules are currently loaded, run `module list`.
 
 2.	Create a new directory for this exercise called `L_luymesi_trans_variation` and copy the three (3) files from the `Lamellibrachia_luymesi_transcriptome_variant_calling` folder in the `/home/shared/biobootcamp/data` directory to your new directory using `cp` and a wildcard (i.e., `*`). Now, move into your `L_luymesi_trans_variation` directory to continue with the exercise.
 
