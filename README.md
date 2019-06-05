@@ -51,7 +51,7 @@ This will take a bit of time to run, so review the command to understand all the
 
 7.	Once the above command is done, a summary is printed to the screen. Note the overall alignment rate, which is quite low. Why might this be the case?
 
-8.	Next, use `samtools sort` on the `Lamellibrachia_luymesi_transcriptomic_variants.bam` file and output the result to a file called `Lamellibrachia_luymesi_transcriptomic_variants.sorted` (why are you doing this?).
+8.	Next, use `samtools sort` on the `Lamellibrachia_luymesi_transcriptomic_variants.bam` file and output the result to a file called `Lamellibrachia_luymesi_transcriptomic_variants.sorted.bam` (why are you doing this?).
 
 9.	Next, use `samtools index` on the `Lamellibrachia_luymesi_transcriptomic_variants.sorted.bam` file (again, why are you doing this?).
 
@@ -104,9 +104,9 @@ java \
 
     2.	We can now generate some graphics to summarize our statistics, with all of them being placed in their own specific directory: `plot-vcfstats_bbc -p ALL_variants_stats_output_dir/ Lamellibrachia_luymesi_transcriptomic_variants_ALL.stats`. This will use the local `plot-vcfstats` located in the bootcamp bin directory, which should already be in your PATH.
 
-    3.	Change directory into `ALL_variants_stats_output_dir/` and long list the contents of the directory. Many of the files will be familiar by their extensions. If you are curious of what’s in the **\*.dat** file, feel free to explore using `cat` or `less`.
+    3.	Change directory into `ALL_variants_stats_output_dir/` and long list the contents of the directory. Many of the files will be familiar by their extensions. If you are curious of what’s in the `*.dat` file, feel free to explore using `cat` or `less`.
 
-    4.	Now you will download some of the PDF files to your laptop for viewing. Connect to the ASC with file transfer software of your choice or using `scp` as previously. Look in `ALL_variants_stats_output_dir/` for the file summary.pdf and download to a directory on your computer called `ALL_variants_stats_output`. Open the file and interpret the information. Does it make sense to you in the context of molecular biology and evolution?
+    4.	Now you will download some of the PDF files to your laptop for viewing. Connect to the ASC with file transfer software of your choice or using `scp` as previously. Look in `ALL_variants_stats_output_dir/` for the file `summary.pdf` and download to a directory on your computer called `ALL_variants_stats_output`. Open the file and interpret the information. Does it make sense to you in the context of molecular biology and evolution?
 
 13.	Note that at this point, we still need to filter false positives from our potential variants. Variant filtering is an area of active development and is not easy. The annotations produced by variant callers provide only indirect hints about quality of the calls and an approach that worked for one dataset may not work for another. This is where you will need to experiment to determine what is best for the dataset at hand.
 
