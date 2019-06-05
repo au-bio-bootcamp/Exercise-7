@@ -19,7 +19,7 @@
 
     2.	The exercise will focus on contigs **>2,000** bp in size, so those need to be isolated. Run `select_contigs.pl -help` and read over the information under USAGE: (near the top) to 1) identify the required option flag and 2) structure the command. When ready, execute the command and save the size filtered contigs to a file called `Lamellibrachia_luymesi_2000bp_plus.fasta`
 
-    3.	Assess the contigs in `Lamellibrachia_luymesi_2000bp_plus.fasta` using the `get_fasta_stats.pl -T`. Note whether (and how) the summary statistics differ from (2a) above by adding them to the table in the column **After filtering**.
+    3.	Assess the contigs in `Lamellibrachia_luymesi_2000bp_plus.fasta` using the `get_fasta_stats.pl -T`. Note whether (and how) the summary statistics differ from (2.i) above by adding them to the table in the column **After filtering**.
 
 3.	Next, use the `module load` command to make bowtie2, samtools, and picard available interactively in your workspace.
 
