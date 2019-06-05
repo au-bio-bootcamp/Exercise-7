@@ -33,7 +33,7 @@
 
         `samtools faidx Lamellibrachia_luymesi_2000bp_plus.fasta`
 
-5.	Execute `bowtie2-build` and examine the usage and options. Now rerun `bowtie2-build` to create an index using *Lamellibrachia_luymesi_transcriptomic_variants_index* as the *bt2\_index\_base* and `Lamellibrachia\_luymesi\_2000bp_plus.fasta` as the *reference\_in*. No additional options are needed.
+5.	Execute `bowtie2-build` and examine the usage and options. Now rerun `bowtie2-build` to create an index using *Lamellibrachia_luymesi_transcriptomic_variants_index* as the *bt2_index_base* and `Lamellibrachia_luymesi_2000bp_plus.fasta` as the *reference_in*. No additional options are needed.
 
 6.	Now run the following command (and elsewhere, document what this command is accomplishing by running `bowtie2 –h` and `samtools view` to dissect the options being used):
 
