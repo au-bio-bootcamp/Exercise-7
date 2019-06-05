@@ -21,7 +21,7 @@
 
     3.	Assess the contigs in `Lamellibrachia_luymesi_2000bp_plus.fasta` using the `get_fasta_stats.pl -T`. Note whether (and how) the summary statistics differ from (2.i) above by adding them to the table in the column **After filtering**.
 
-3.	Next, use the `module load` command to make bowtie2, samtools, and picard available interactively in your workspace.
+3.	Next, use the `module load` command to make `bowtie2`, `samtools`, and `picard` available interactively in your workspace.
 
 4.	Now, we will make two index files for our reference fasta file. For this step, we will use picard and samtools.
 
@@ -33,7 +33,7 @@
 
         `samtools faidx Lamellibrachia_luymesi_2000bp_plus.fasta`
 
-5.	Execute `bowtie2-build` and examine the usage and options. Now rerun `bowtie2-build` to create an index using `Lamellibrachia_luymesi_transcriptomic_variants_index` as the *bt2\_index\_base* and **Lamellibrachia\_luymesi\_2000bp_plus.fasta** as the *reference\_in*. No additional options are needed.
+5.	Execute `bowtie2-build` and examine the usage and options. Now rerun `bowtie2-build` to create an index using *Lamellibrachia_luymesi_transcriptomic_variants_index* as the *bt2\_index\_base* and `Lamellibrachia\_luymesi\_2000bp_plus.fasta` as the *reference\_in*. No additional options are needed.
 
 6.	Now run the following command (and elsewhere, document what this command is accomplishing by running `bowtie2 –h` and `samtools view` to dissect the options being used):
 
@@ -51,9 +51,9 @@ This will take a bit of time to run, so review the command to understand all the
 
 7.	Once the above command is done, a summary is printed to the screen. Note the overall alignment rate, which is quite low. Why might this be the case?
 
-8.	Next, use `samtools sort` on the **Lamellibrachia\_luymesi\_transcriptomic\_variants.bam** file and output the result to a file called *Lamellibrachia\_luymesi\_transcriptomic\_variants.sorted* (why are you doing this?).
+8.	Next, use `samtools sort` on the `Lamellibrachia_luymesi_transcriptomic_variants.bam` file and output the result to a file called `Lamellibrachia_luymesi_transcriptomic_variants.sorted` (why are you doing this?).
 
-9.	Next, use `samtools index` on the *Lamellibrachia\_luymesi\_transcriptomic\_variants.sorted.bam* file (again, why are you doing this?).
+9.	Next, use `samtools index` on the `Lamellibrachia_luymesi_transcriptomic_variants.sorted.bam` file (again, why are you doing this?).
 
 10.	Lastly, we will use picard to add read groups and index the file for gatk compatibility.
 
